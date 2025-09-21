@@ -13,8 +13,8 @@ import { RegisterPage } from './register.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule,
-    RegisterPage // Import komponen standalone di sini
-  ]
+    RegisterPageRoutingModule
+  ],
+  declarations: [RegisterPage]
 })
 export class RegisterPageModule {}

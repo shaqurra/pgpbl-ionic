@@ -1,17 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { NavController, AlertController, IonicModule } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
-  standalone: true,
-  imports: [IonicModule, FormsModule]
+  standalone: false,
 })
-export class RegisterPage {
 
+export class RegisterPage {
   email = '';
   password = '';
   confirmPassword = '';
@@ -42,5 +40,4 @@ export class RegisterPage {
       await alert.present();
     }
   }
-
 }
