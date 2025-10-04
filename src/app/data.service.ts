@@ -23,4 +23,29 @@ export class DataService {
       });
     });
   }
+
+  getPointById(id: string) {
+    const pointRef = ref(database, `points/${id}`);
+    return new Promise((resolve, reject) => {
+      get(pointRef).then((snapshot) => {
+        if (snapshot.exists()) {
+          resolve(snapshot.val());
+        } else {
+          reject('No data available');
+        }
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  }
+
+  updatePoint(id: string, point: { name: string, coordinates: string }) {
+    const pointRef = ref(database, `points/${id}`);
+    return update(pointRef, point);
+  }
+
+  deletePoint(id: string) {
+    const pointRef = ref(database, `points/${id}`);
+    return remove(pointRef);
+  }
 }

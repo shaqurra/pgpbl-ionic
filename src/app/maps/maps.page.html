@@ -9,7 +9,25 @@
 
 <ion-fab slot="fixed" vertical="bottom" horizontal="end">
   <ion-fab-button routerLink="/createpoint">
-    <ion-icon name="add"></ion-icon>
+    <ion-icon name="add"></ion-icon><!-- src/app/maps/maps.page.html -->
+
+    <ion-header [translucent]="true">
+      <ion-toolbar>
+        <ion-title>
+          Maps
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content [fullscreen]="true">
+      <div id="map" style="height: 100%; width: 100%;"></div>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="goToCreatePoint()">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-content>
+    
   </ion-fab-button>
 </ion-fab>
 </ion-content>

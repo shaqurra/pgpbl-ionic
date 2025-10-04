@@ -77,7 +77,10 @@
               "buildTarget": "app:build:production"
             },
             "development": {
-              "buildTarget": "app:build:development"
+              "buildTarget": "app:build:development",
+              "headers": {
+                "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:8100 https://apis.google.com https://www.gstatic.com https://cdn.firebase.com https://*.firebaseio.com; connect-src 'self' http://localhost:8100 ws://localhost:8100 https://identitytoolkit.googleapis.com https://*.firebaseio.com wss://*.firebaseio.com https://*.firebasedatabase.app wss://*.firebasedatabase.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.tile.openstreetmap.org https://maps.gstatic.com *.googleapis.com *.ggpht.com; frame-src 'self' https://pgpbl-ionic-2025-shaqurra.firebaseapp.com; font-src 'self' data:;"
+              }
             },
             "ci": {
               "progress": false
